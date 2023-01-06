@@ -22,7 +22,7 @@ public class MainVerticle extends AbstractVerticle {
       router.route("/issuer").handler(context -> {
 
           context.request().body().onComplete(rq -> {
-
+            System.out.println(rq.result().toString());
             context.json(
               new JsonObject()
                 .put("uri", context.request().uri())
@@ -37,7 +37,7 @@ public class MainVerticle extends AbstractVerticle {
       router.route("/holder").handler(context -> {
 
         context.request().body().onComplete(rq -> {
-
+          System.out.println(rq.result().toString());
           context.json(
             new JsonObject()
               .put("uri", context.request().uri())
@@ -50,7 +50,7 @@ public class MainVerticle extends AbstractVerticle {
       router.route("/tail-server").handler(context -> {
 
         context.request().body().onComplete(rq -> {
-
+          System.out.println(rq.result().toString());
           context.json(
             new JsonObject()
               .put("uri", context.request().uri())
